@@ -1,0 +1,57 @@
+Below is the description of the data output:
+
+Fact table: 
+-imigration_table : (
+					entry_id = identification code for each entry;
+                    i94yr = year of entry in the US;
+                    i94mon = month of entry in the US;
+                    residence = Country of residence;
+                    destination = US state (at least first stop);
+                    i94port = port of entrance in the US;
+                    i94mode = type of entry route (1=air, 2=sea, 3=land); 
+                    arriv_date = date of arrival in the US;
+                    dept_date = date of departure from the US;
+                    stay_duration = duration of stay;
+                    age ;
+                    visatype = type of legal permission given to the immigrant;
+                    gender;
+                    )
+                    
+Dimension Tables  
+- land_temp_table: (
+					year = year of the displayed data;
+				    city; 
+                    country_code = code of the country according to the country_label table;
+                    avg_temp = average temperatura for that year in the city;
+                    )
+                   
+- airport_table: (
+				 ident = airport identification code;
+				 type = airport type (small,medium, large, etc); 
+                 name = airport name;
+                 city = city in which the airport is located;
+                 iso_country = abreviation of the country in whic the airport is located;
+                 i94port = corresponding i94 port in the US for that airport (see README.md data considerations);
+                 )
+
+- us_city_demo: (
+				city;
+				state;
+                state_code = US state abreviation;
+                median_age = median age of total population;
+                male_pop = total male population;
+                female_pop = total female population;
+                total_pop = total population;
+                immigrants = total immigrant population;
+                )
+                
+- stage_port_label: (
+					code = i94 port code;
+        			city = city in which the port is located;
+            		state = state in which the port is located;
+                    )
+                    
+- stage_country_label: (
+						country_code = numeric code for the country;
+        			    country_name;               
+                        )
